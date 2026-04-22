@@ -61,15 +61,7 @@ class TaskController extends Controller
         $perPage = $request->input('per_page', 10);
         $tasks = $query->paginate($perPage);
 
-        return response()->json([
-            'data' => $tasks->items(),
-            'meta' => [
-                'current_page' => $tasks->currentPage(),
-                'last_page'    => $tasks->lastPage(),
-                'per_page'     => $tasks->perPage(),
-                'total'        => $tasks->total(),
-            ],
-        ]);
+        return response()->json($tasks);
     }
 
     /**
