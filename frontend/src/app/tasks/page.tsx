@@ -46,9 +46,9 @@ export default function TasksPage() {
       ]);
       setTasks(taskRes.data);
       setPagination({
-        current: taskRes.meta.current_page,
-        last: taskRes.meta.last_page,
-        total: taskRes.meta.total,
+        current: taskRes.current_page ?? taskRes.meta?.current_page,
+  last: taskRes.last_page ?? taskRes.meta?.last_page,
+  total: taskRes.total ?? taskRes.meta?.total,
       });
       // Flatten tree for dropdown
       const flatten = (cats: Category[]): Category[] => {

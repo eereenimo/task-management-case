@@ -4,6 +4,9 @@ export interface ApiResponse<T> {
 }
 
 export interface PaginatedResponse<T> {
+  total: number;
+  last_page: number;
+  current_page: number;
   data: T[];
   links: {
     first: string;

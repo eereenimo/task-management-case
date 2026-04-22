@@ -6,6 +6,7 @@ import { Category } from "@/types/category";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 interface TaskFormProps {
   task?: Task | null;
